@@ -1,3 +1,3 @@
-require_relative = 'Loader'
-binding.pry
+require_relative 'Loader'
+
 Game.new.intro

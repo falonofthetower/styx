@@ -1,4 +1,4 @@
+class Loader
+  require_relative 'load_file'  
+end
 
-  require 'pry'
-  require_relative = 'Game'
-  require_relative = 'Loader'
