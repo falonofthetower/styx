@@ -1,3 +1,2 @@
-require_relative = 'loader'
-
+require_relative = 'Loader'
 Game.new.intro
