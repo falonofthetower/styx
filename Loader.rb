@@ -1,3 +1,4 @@
-require 'pry'
-require_relative = 'Game'
-require_relative = 'Loader'
+
+  require 'pry'
+  require_relative = 'Game'
+  require_relative = 'Loader'

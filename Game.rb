@@ -1,3 +1,4 @@
+require_relative 'Loader'
 class Game < Loader  
 
   def intro
