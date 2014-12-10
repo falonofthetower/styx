@@ -15,10 +15,12 @@ class TicTacToe < Controller
       if board.valid? input
         board.squares[input] = "X"
       else
+        #Eliminated this line to make sure it wasn't the problem
         #View.new.invalid_choice(input)        
       end
-      #binding.pry      
-    end until !board.valid? input
+      #binding.pry
+      #The loop works until you choose incorrectly in which case the player loses a turn      
+    end until board.valid? input
   end
 
   def computer_chooses_square      

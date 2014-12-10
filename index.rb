@@ -13,6 +13,7 @@ begin
 end until user.wins >= 0
 tictactoe = TicTacToe.new(user)
 begin
+  #This is where it is triggered
   tictactoe.user_chooses_square
   tictactoe.computer_chooses_square
 end until user.wins >= 20
