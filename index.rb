@@ -10,5 +10,9 @@ begin
   rock_paper_scissors.player_chooses_weapon
   computer.weapon = rock_paper_scissors.computer_chooses_weapon
   rock_paper_scissors.compare_weapons(user,computer)
-end until user.wins >= 10
-
+end until user.wins >= 0
+tictactoe = TicTacToe.new(user)
+begin
+  tictactoe.user_chooses_square
+  tictactoe.computer_chooses_square
+end until user.wins >= 20

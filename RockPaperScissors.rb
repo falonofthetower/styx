@@ -8,7 +8,7 @@ class RockPaperScissors < Controller
   end
 
   def welcome
-    View.rock_paper_scissors_welcome
+    View.new.rock_paper_scissors_welcome
   end
 
   def player_chooses_weapon        
@@ -38,6 +38,6 @@ class RockPaperScissors < Controller
     elsif result[1] == "computer"
       @computer.wins += 1
     end 
-    View.display_rps_result(result[0])          
+    View.new.display_rps_result(result[0])          
   end
 end
