@@ -1,6 +1,7 @@
 class View < Loader
-  def initialize
+  def initialize(time=0.5)
     system("clear")
+    sleep time
   end
 
   def invalid_choice(choice="That")    
@@ -18,12 +19,14 @@ class View < Loader
   end
 
   def the_forest
+
     puts "You are walking through the woods one day and come upon a door. No walls, no roof, nothing beside it, nothing behind it."
     puts "Do you enter? Y/N"
   end
 
   def rock_paper_scissors_welcome
-    puts "This is Rock Paper Scissors Lizard Spock bitches!!!"
+    puts "A small child sits in the grass. He stands to his feet as you approach. He looks you up and down and holds out his fist."
+    puts "'You know the rules?' You knod and the game begins"
   end
 
   def self.player_chooses_weapon(list)
@@ -49,15 +52,50 @@ class View < Loader
     if user_turn = 1
       puts "Pick your poison 1-9"
     end
+    sleep 0.5
+  end
+
+  def declare_tic_tac_toe_winner(winner,name)
+    if winner == 'tie'
+      puts "There is no winner"
+    elsif winner == 'user'
+      puts "#{name} wins!"
+    else
+      puts "#{name} loses!"
+    end
     sleep 1
   end
 
-  def declare_tic_tac_toe_winner(winner)
-    if winner == 'tie'
-      puts "There is no winner"
-    else
-      puts "#{winner} wins!"
-    end
-    sleep 2
+  def rock_paper_scissors_conclusion    
+    puts "The boy sits back down and begins to scratch in the dirt. You watch for a minute and then hear noises from the east, walking into a stand of trees you find a woman older than the dust she sits in wrinkled as a crumpled flower."
+    sleep 1
+    puts "'Make your mark, boy'"
+    sleep 1
+    puts "Do you sit down? y/n"        
+  end
+
+  def tic_tac_toe_conclusion
+    puts "The woman curls up her face in disgust and turns away from you."
+    sleep 4
+    puts "Confused you are about to ask what is wrong when the sound of windchimes draws your attention."
+    sleep 4
+    puts "You go deeper into the woods and find a set swaying in the wind."
+    sleep 4
+    puts "Tall as a man, vibrant as a woman, and more pure than a childs soul."
+    sleep 4
+    puts "You sit and listen to their tones until you fall asleep"
+    sleep 4    
+  end
+
+  def the_man_with_the_cards
+    sleep 4
+    puts "You are asleep, dreaming of something both beautiful profound. Suddenly you hear the voices. The voices pounding in your head."
+          sleep 3
+          puts "'The man with the cards is coming...'"
+          sleep 3
+          puts "'The man with the cards is coming...'"
+          sleep 3
+          puts "'The man with the cards is coming...'"
+          sleep 4          
   end
 end

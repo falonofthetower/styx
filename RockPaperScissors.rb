@@ -40,4 +40,14 @@ class RockPaperScissors < Controller
     end 
     View.new.display_rps_result(result[0])          
   end
+
+  def conclusion
+    View.new.rock_paper_scissors_conclusion
+    begin
+      input = gets.chomp
+      unless yes_or_no? input
+        puts "#{user.name} you must answer yes or no!"        
+      end
+    end until yes_or_no? input  
+  end
 end
