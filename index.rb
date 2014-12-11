@@ -12,7 +12,7 @@ begin
   rock_paper_scissors.player_chooses_weapon
   computer.weapon = rock_paper_scissors.computer_chooses_weapon
   rock_paper_scissors.compare_weapons(user,computer)
-end until user.wins >= 1
+end until user.wins >= 10
 rock_paper_scissors.conclusion
 
 # Tic Tac Toe Round
@@ -38,7 +38,7 @@ begin
   tictactoe.process_winner
   tictactoe.declare_winner  
   starting_player = starting_player * -1
-end until user.wins >= 2
+end until user.wins >= 20
 tictactoe.conclusion
 
 # Black Jack Round
