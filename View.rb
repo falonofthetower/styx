@@ -1,6 +1,6 @@
 class View < Loader
   def initialize
-    #system("clear")
+    system("clear")
   end
 
   def invalid_choice(choice="That")    
@@ -34,9 +34,9 @@ class View < Loader
     puts result
   end
 
-  def tic_tac_toe_board(squares)
+  def tic_tac_toe_board(squares, user_turn=0)    
     puts "     |     |     "
-    puts "  #{squares["1"]}  |  #{squares["2"]}  |  #{squares["3"]}     "
+    puts "  #{squares["7"]}  |  #{squares["8"]}  |  #{squares["9"]}     "      
     puts "     |     |     "
     puts "-----+-----+-----"
     puts "     |     |     "
@@ -44,8 +44,20 @@ class View < Loader
     puts "     |     |     "
     puts "-----+-----+-----"
     puts "     |     |     "
-    puts "  #{squares["7"]}  |  #{squares["8"]}  |  #{squares["9"]}     "      
-    puts "     |     |     "
-    puts "Pick your poison 1-9" 
+    puts "  #{squares["1"]}  |  #{squares["2"]}  |  #{squares["3"]}     "
+    puts "     |     |     "    
+    if user_turn = 1
+      puts "Pick your poison 1-9"
+    end
+    sleep 1
+  end
+
+  def declare_tic_tac_toe_winner(winner)
+    if winner == 'tie'
+      puts "There is no winner"
+    else
+      puts "#{winner} wins!"
+    end
+    sleep 2
   end
 end
