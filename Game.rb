@@ -25,8 +25,7 @@ class Game < Controller
       unless yes_or_no? input
         puts "#{user.name} you must answer yes or no!"        
       end
-    end until yes_or_no? input
-    #self.horrible_fate if input == "n"    
+    end until yes_or_no? input    
   end
 
 end

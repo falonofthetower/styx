@@ -4,6 +4,8 @@ game = Game.new
 user = game.intro
 computer = Computer.new
 game.the_forest
+
+# Rock Paper Scissors Round
 rock_paper_scissors = RockPaperScissors.new(user)
 rock_paper_scissors.welcome
 begin
@@ -11,6 +13,8 @@ begin
   computer.weapon = rock_paper_scissors.computer_chooses_weapon
   rock_paper_scissors.compare_weapons(user,computer)
 end until user.wins >= 10
+
+# Tic Tac Toe Round
 starting_player = 1
 begin  
   tictactoe = TicTacToe.new(user)
@@ -34,3 +38,5 @@ begin
   tictactoe.declare_winner  
   starting_player = starting_player * -1
 end until user.wins >= 20
+
+# Black Jack Round
