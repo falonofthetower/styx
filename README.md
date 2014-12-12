@@ -11,4 +11,6 @@ It is implementing more or less an MVC pattern mostly because I felt comfortable
 
 Any comments, suggestions, or criticism is welcome.
 
+Current development is Namespacing/autoloading
+
 The man with the cards is coming...
