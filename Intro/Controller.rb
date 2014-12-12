@@ -1,6 +1,6 @@
-class Game < Controller
+class Intro::Controller
   attr_accessor :user
-
+  
   def initialize
     @user = User.new    
   end
@@ -29,4 +29,7 @@ class Game < Controller
     abort if input == 'n'
   end
 
+  def yes_or_no?(input)
+    input.downcase == 'y' || input.downcase == 'n'
+  end
 end

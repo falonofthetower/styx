@@ -1,11 +1,11 @@
-class TicTacToe < Controller
+class TicTacToe::Controller
   attr_accessor :result, :winner
   attr_reader :user, :computer, :board
 
   def initialize(user)
     @user = user
     @computer = Computer.new
-    @board = Board.new
+    @board = TicTacToe::Board.new
     @winner = false
   end
 

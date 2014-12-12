@@ -1,4 +1,4 @@
-class Board < Loader
+class TicTacToe::Board
   attr_accessor :squares, :board
 
   WINS = [["1","2","3"], ["4","5","6"], ["7","8","9"], 

@@ -1,4 +1,4 @@
-class Weapons < Loader
+class RockPaperScissors::Weapons
   attr_reader :user
 
    RESULTS =  { rock:      { scissors: 'crushes',    lizard:   'crushes' },
@@ -18,8 +18,8 @@ class Weapons < Loader
 
   def self.compare_weapons(user,computer)    
     result = []
-    user_wins = Weapons::RESULTS.select {|k,v| v.key?(computer.weapon) && k == user.weapon }
-    computer_wins = Weapons::RESULTS.select {|k,v| v.key?(user.weapon) && k == computer.weapon }
+    user_wins = RESULTS.select {|k,v| v.key?(computer.weapon) && k == user.weapon }
+    computer_wins = RESULTS.select {|k,v| v.key?(user.weapon) && k == computer.weapon }
     if computer_wins.empty? && !user_wins.empty?
       verb = user_wins[user.weapon][computer.weapon] 
       result << "Your #{user.weapon.capitalize} #{verb} my #{computer.weapon.capitalize} you win!"

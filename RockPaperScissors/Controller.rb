@@ -1,4 +1,4 @@
-class RockPaperScissors < Controller
+class RockPaperScissors::Controller  
   attr_accessor :result
   attr_reader :user, :computer  
 
@@ -12,9 +12,9 @@ class RockPaperScissors < Controller
   end
 
   def player_chooses_weapon        
-    begin      
-      weapons = Weapons.new
-      array = Weapons.array      
+    begin
+      weapons = RockPaperScissors::Weapons.new
+      array = RockPaperScissors::Weapons.array      
       list = ''
       i = 1
       array.each do |each|
@@ -23,16 +23,16 @@ class RockPaperScissors < Controller
       end
       View.player_chooses_weapon(list)
       weapon = gets.chomp.to_i      
-    end until Weapons.valid? weapon
+    end until RockPaperScissors::Weapons.valid? weapon
     @user.weapon = array[weapon -= 1]    
   end
 
   def computer_chooses_weapon
-    computer.weapon = Weapons::RESULTS.keys.sample
+    computer.weapon = RockPaperScissors::Weapons::RESULTS.keys.sample
   end
 
   def compare_weapons(user,computer)
-    result = Weapons.compare_weapons(user,computer)      
+    result = RockPaperScissors::Weapons.compare_weapons(user,computer)      
     if result[1] == "user"
       @user.wins += 1 
     elsif result[1] == "computer"
@@ -49,5 +49,9 @@ class RockPaperScissors < Controller
         puts "#{user.name} you must answer yes or no!"        
       end
     end until yes_or_no? input  
+  end
+
+  def yes_or_no?(input)
+    input.downcase == 'y' || input.downcase == 'n'
   end
 end

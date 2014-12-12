@@ -1,4 +1,4 @@
-class View < Loader
+class View
   def initialize(time=0.5)
     system("clear")
     sleep time
@@ -68,9 +68,9 @@ class View < Loader
 
   def rock_paper_scissors_conclusion    
     puts "The boy sits back down and begins to scratch in the dirt. You watch for a minute and then hear noises from the east, walking into a stand of trees you find a woman older than the dust she sits in wrinkled as a crumpled flower."
-    sleep 1
+    sleep 3
     puts "'Make your mark, boy'"
-    sleep 1
+    sleep 3
     puts "Do you sit down? y/n"        
   end
 
@@ -89,7 +89,8 @@ class View < Loader
 
   def the_man_with_the_cards
     sleep 4
-    puts "You are asleep, dreaming of something both beautiful profound. Suddenly you hear the voices. The voices pounding in your head."
+    puts "You are asleep, dreaming of something both beautiful and profound. 
+          Suddenly you hear the voices. The voices pounding in your head."
           sleep 3
           puts "'The man with the cards is coming...'"
           sleep 3
