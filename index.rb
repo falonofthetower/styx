@@ -13,7 +13,7 @@ begin
   rock_paper_scissors.player_chooses_weapon
   computer.weapon = rock_paper_scissors.computer_chooses_weapon
   rock_paper_scissors.compare_weapons(user,computer)
-end until user.wins >= 1
+end until user.wins >= 5
 rock_paper_scissors.conclusion
 
 # Tic Tac Toe Round

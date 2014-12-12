@@ -20,13 +20,15 @@ class View
 
   def the_forest
 
-    puts "You are walking through the woods one day and come upon a door. No walls, no roof, nothing beside it, nothing behind it."
+    puts "You are walking through the woods one day and come upon a door."
+    puts " No walls, no roof, nothing beside it, nothing behind it."
     puts "Do you enter? Y/N"
   end
 
   def rock_paper_scissors_welcome
-    puts "A small child sits in the grass. He stands to his feet as you approach. He looks you up and down and holds out his fist."
-    puts "'You know the rules?' You knod and the game begins"
+    puts "A small child sits in the grass. He stands to his feet as you approach."
+    puts "He looks you up and down and holds out his fist."
+    puts "'You know the rules?' You nod and the game begins"
   end
 
   def self.player_chooses_weapon(list)
@@ -67,7 +69,9 @@ class View
   end
 
   def rock_paper_scissors_conclusion    
-    puts "The boy sits back down and begins to scratch in the dirt. You watch for a minute and then hear noises from the east, walking into a stand of trees you find a woman older than the dust she sits in wrinkled as a crumpled flower."
+    puts "The boy sits back down and begins to scratch in the dirt."
+    puts "You watch for a minute and then hear noises from the east."
+    puts "Walking into a stand of trees you find a woman older than the dust she sits in wrinkled as a crumpled flower."
     sleep 3
     puts "'Make your mark, boy'"
     sleep 3
@@ -89,14 +93,14 @@ class View
 
   def the_man_with_the_cards
     sleep 4
-    puts "You are asleep, dreaming of something both beautiful and profound. 
-          Suddenly you hear the voices. The voices pounding in your head."
-          sleep 3
-          puts "'The man with the cards is coming...'"
-          sleep 3
-          puts "'The man with the cards is coming...'"
-          sleep 3
-          puts "'The man with the cards is coming...'"
-          sleep 4          
+    puts "You are asleep, dreaming of something both beautiful and profound." 
+    puts "Suddenly you hear the voices. The voices pounding in your head."
+    sleep 3
+    puts "'The man with the cards is coming...'"
+    sleep 3
+    puts "'The man with the cards is coming...'"
+    sleep 3
+    puts "'The man with the cards is coming...'"
+    sleep 4          
   end
 end
