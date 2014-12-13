@@ -1,25 +1,31 @@
 class Intro::Controller
   attr_accessor :user
-  
-  def initialize
+ 
+  def initialize(user)
     @user = User.new    
+    user = intro
+    computer = Computer.new    
+  end
+
+  def play
+    the_forest    
   end
 
   def intro
-    View.new.intro
+    Intro::Views.new.intro
     begin
       if user.name == ''
         puts "You must give your name!"
       end
       user.name = gets.chomp     
     end until user.valid_name?
-    View.new.welcome user.name
+    Intro::Views.new.welcome user.name
     user          
   end
 
   def the_forest
     system("clear")
-    View.new.the_forest
+    Intro::Views.new.the_forest
     begin
       input = gets.chomp
       unless yes_or_no? input

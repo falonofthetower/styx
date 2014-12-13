@@ -1,0 +1,8 @@
+require 'pry'
+require_relative '../rock_paper_scissors/rock_paper_scissors'
+require_relative '../tic_tac_toe/tic_tac_toe'
+require_relative '../blackjack/blackjack'
+require_relative '../intro/intro'
+require_relative 'actors/player'
+require_relative 'actors/computer'
+require_relative 'actors/user'

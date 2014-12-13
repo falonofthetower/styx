@@ -7,18 +7,45 @@ class TicTacToe::Controller
     @computer = Computer.new
     @board = TicTacToe::Board.new
     @winner = false
+    play
+  end
+
+  def play
+    starting_player = 1
+    begin        
+      begin
+        if starting_player == 1   
+          user_chooses_square
+        else
+          sleep 1
+          computer_chooses_square
+        end
+        unless winner
+          if starting_player == 1
+            sleep 1
+            computer_chooses_square
+          else
+            user_chooses_square
+          end
+        end
+      end until winner
+      process_winner
+      declare_winner  
+      starting_player = starting_player * -1
+    end until user.wins >= 5
+    conclusion
   end
 
   def user_chooses_square
     begin
-      View.new(0).tic_tac_toe_board(board.squares, 1)    
+      TicTacToe::Views.new(0).tic_tac_toe_board(board.squares, 1)    
       input = gets.chomp
       valid = board.valid_squares.has_key? input  
       if valid
         board.squares[input] = "X"
-        View.new(0).tic_tac_toe_board(board.squares)
+        TicTacToe::Views.new(0).tic_tac_toe_board(board.squares)
       else        
-        View.new.invalid_choice(input)        
+        TicTacToe::Views.new.invalid_choice(input)        
       end      
       self.winner = 'user' if board.check_for_winner == "user"
       self.winner = 'tie' if board.check_for_winner == 'tie'
@@ -30,7 +57,7 @@ class TicTacToe::Controller
 
     self.winner = 'computer' if board.check_for_winner == "computer"
     self.winner = 'tie' if board.check_for_winner == 'tie'
-    View.new(0).tic_tac_toe_board(board.squares)
+    TicTacToe::Views.new(0).tic_tac_toe_board(board.squares)
   end
 
   def process_winner
@@ -38,10 +65,10 @@ class TicTacToe::Controller
   end
 
   def declare_winner
-    View.new.declare_tic_tac_toe_winner(self.winner, user.name)
+    TicTacToe::Views.new.declare_tic_tac_toe_winner(self.winner, user.name)
   end
 
   def conclusion
-    View.new.tic_tac_toe_conclusion
+    TicTacToe::Views.new.tic_tac_toe_conclusion
   end
 end
