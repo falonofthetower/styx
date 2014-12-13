@@ -1,4 +1,4 @@
-class Blackjack::Views
+class Blackjack::Views < MasterViews
   def the_man_with_the_cards
     sleep 4
     puts "You are asleep, dreaming of something both beautiful and profound."

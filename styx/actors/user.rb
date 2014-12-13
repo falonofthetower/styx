@@ -1,8 +1,8 @@
 class User < Player
-  attr_accessor :name, :user
+  attr_accessor :name, :user, :wins
 
-  def initialize
-    @wins = 0    
+  def initialize    
+    @wins = 0
   end
 
   def valid_name?

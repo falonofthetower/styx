@@ -1,4 +1,4 @@
-class MasterView
+class MasterViews
   def initialize(time=0.5)
     system("clear")
     sleep time

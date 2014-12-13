@@ -1,4 +1,4 @@
-class TicTacToe::Controller
+  class TicTacToe::Controller
   attr_accessor :result, :winner
   attr_reader :user, :computer, :board
 
@@ -6,34 +6,34 @@ class TicTacToe::Controller
     @user = user
     @computer = Computer.new
     @board = TicTacToe::Board.new
-    @winner = false
-    play
+    @winner = false    
   end
 
   def play
     starting_player = 1
-    begin        
-      begin
+    begin  
+      tictactoe = TicTacToe::Controller.new(user)
+      begin        
         if starting_player == 1   
-          user_chooses_square
+          tictactoe.user_chooses_square
         else
           sleep 1
-          computer_chooses_square
+          tictactoe.computer_chooses_square
         end
-        unless winner
+        unless tictactoe.winner
           if starting_player == 1
             sleep 1
-            computer_chooses_square
+            tictactoe.computer_chooses_square
           else
-            user_chooses_square
+            tictactoe.user_chooses_square
           end
         end
-      end until winner
-      process_winner
-      declare_winner  
+      end until tictactoe.winner      
+      tictactoe.process_winner
+      tictactoe.declare_winner  
       starting_player = starting_player * -1
-    end until user.wins >= 5
-    conclusion
+    end until user.wins >= 1
+    tictactoe.conclusion
   end
 
   def user_chooses_square
@@ -60,12 +60,12 @@ class TicTacToe::Controller
     TicTacToe::Views.new(0).tic_tac_toe_board(board.squares)
   end
 
-  def process_winner
-    self.winner == 'user' ? user.wins += 1 : computer.wins += 1
+  def process_winner    
+    self.winner == 'user' ? user.add_win : computer.add_win 
   end
 
-  def declare_winner
-    TicTacToe::Views.new.declare_tic_tac_toe_winner(self.winner, user.name)
+  def declare_winner    
+    TicTacToe::Views.new.declare_tic_tac_toe_winner(self.winner, self.user.name)
   end
 
   def conclusion

@@ -1,8 +1,14 @@
 require_relative 'styx/config'
+class Styx
+  attr_accessor :user  
 
-user = User.new
+  def play
+    @user = User.new
+    Intro::Controller.new(user)
+    #RockPaperScissors::Controller.new(user)
+    TicTacToe::Controller.new(self.user).play
+    Blackjack::Controller.new
+  end
+end
 
-Intro::Controller.new(user)
-RockPaperScissors::Controller.new(user)
-TicTacToe::Controller.new(user)
-Blackjack::Controller.new
+Styx.new.play

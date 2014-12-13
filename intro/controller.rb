@@ -1,13 +1,14 @@
 class Intro::Controller
-  attr_accessor :user
+  attr_accessor :user, :wins
  
   def initialize(user)
-    @user = User.new    
-    user = intro
-    computer = Computer.new    
+    @user = user
+    computer = Computer.new
+    self.play    
   end
 
   def play
+    user = intro    
     the_forest    
   end
 

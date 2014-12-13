@@ -1,4 +1,4 @@
-class RockPaperScissors::Views
+class RockPaperScissors::Views < MasterViews
   def rock_paper_scissors_welcome
     puts "A small child sits in the grass. He stands to his feet as you approach."
     puts "He looks you up and down and holds out his fist."

@@ -1,4 +1,4 @@
-class Intro::Views
+class Intro::Views < MasterViews
  def intro
     puts "The View Intro"
     puts "I need your name:"
