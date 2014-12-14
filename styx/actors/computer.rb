@@ -1,7 +1,9 @@
 class Computer < Player
-  attr_accessor
+  attr_accessor :hand  
+  include BlackjackDealer
 
   def initialize
-      @wins = 0      
+      @wins = 0
+      @hand = []
   end 
 end

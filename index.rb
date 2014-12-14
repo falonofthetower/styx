@@ -6,8 +6,8 @@ class Styx
     @user = User.new
     Intro::Controller.new(user)
     #RockPaperScissors::Controller.new(user)
-    TicTacToe::Controller.new(self.user).play
-    Blackjack::Controller.new
+    #TicTacToe::Controller.new(user).play
+    Blackjack::Controller.new(user).play
   end
 end
 

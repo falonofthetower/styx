@@ -1,6 +1,7 @@
 class Player  
-  attr_accessor :wins, :weapon
+  attr_accessor :wins, :weapon, :hand
 
+  include BlackjackPlayer
   require_relative 'computer'
   require_relative 'user'
 

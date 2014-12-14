@@ -11,4 +11,54 @@ class Blackjack::Views < MasterViews
     puts "'The man with the cards is coming...'"
     sleep 4
   end
+
+  def ask_for_bet
+    puts "How much will you wager?"
+  end
+
+  def display_hand(hand,blind_card=false)
+  #binding.pry  
+    top_line =                   ""
+    denomination_line =          ""
+    suit_line =                  ""
+    side_line =                  ""  
+    bottom_line =                ""
+    if hand != []
+      hand.each do |card|
+        if blind_card == true
+          top_line <<             " ---  "      
+          denomination_line <<    "| ~ | "
+          suit_line <<            "| ~ | "
+          side_line <<            "| ~ | "      
+          bottom_line <<          " ---  "
+          blind_card = false  
+        else
+          top_line <<             " --- "
+          denomination_line <<    "| #{card.value} | "    
+          suit_line <<            "| #{card.suit} | "
+          side_line <<            "|   | "        
+          bottom_line <<          " ---  "
+        end          
+      end
+    end
+    puts top_line
+    puts denomination_line
+    puts suit_line
+    puts side_line
+    puts bottom_line      
+  end
+    
+
+  def display_table(user_hand,dealer_hand)
+    edge = '***********************************************************************'  
+    system("clear")    
+    puts edge
+    display_hand(dealer_hand,true)
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    display_hand(user_hand)
+    puts edge    
+  end
 end

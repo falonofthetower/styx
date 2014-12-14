@@ -8,16 +8,6 @@ class RockPaperScissors::Controller
     self.play
   end
 
-  def play
-    welcome
-    begin
-      player_chooses_weapon
-      computer.weapon = computer_chooses_weapon
-      compare_weapons(user,computer)
-    end until user.wins >= 1
-    conclusion    
-  end
-
   def welcome
     RockPaperScissors::Views.new.rock_paper_scissors_welcome
   end
@@ -64,5 +54,15 @@ class RockPaperScissors::Controller
 
   def yes_or_no?(input)
     input.downcase == 'y' || input.downcase == 'n'
+  end
+  
+  def play
+    welcome
+    begin
+      player_chooses_weapon
+      computer.weapon = computer_chooses_weapon
+      compare_weapons(user,computer)
+    end until user.wins >= 1
+    conclusion    
   end
 end
