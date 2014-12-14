@@ -8,8 +8,9 @@ class Deck
     face = ['2','3','4','5','6','7','8','9','T','J','Q','K','A']    
     deck = suits.product(face) * decks
     deck = deck.each do |suit,face|
-      shoe << Card.new(suit,face)
-    end    
+      shoe << Cards.new(suit,face)
+    end
+    shoe.shuffle!    
   end
 
   def shuffle_cards!    
@@ -21,6 +22,7 @@ class Deck
 
   def deal_card
     shoe.pop
+    shuffle_if_low!
   end  
 
   def cleanup

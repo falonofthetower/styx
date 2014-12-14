@@ -16,8 +16,7 @@ class Blackjack::Views < MasterViews
     puts "How much will you wager?"
   end
 
-  def display_hand(hand,blind_card=false)
-  #binding.pry  
+  def display_hand(hand,blind_card=false)  
     top_line =                   ""
     denomination_line =          ""
     suit_line =                  ""
@@ -33,7 +32,7 @@ class Blackjack::Views < MasterViews
           bottom_line <<          " ---  "
           blind_card = false  
         else
-          top_line <<             " --- "
+          top_line <<             " ---  "
           denomination_line <<    "| #{card.value} | "    
           suit_line <<            "| #{card.suit} | "
           side_line <<            "|   | "        
@@ -49,16 +48,25 @@ class Blackjack::Views < MasterViews
   end
     
 
-  def display_table(user_hand,dealer_hand)
+  def display_table(user_hand,dealer_hand,blind_card=true)    
     edge = '***********************************************************************'  
     system("clear")    
     puts edge
-    display_hand(dealer_hand,true)
+    display_hand(dealer_hand,blind_card)
     puts ""
     puts ""
     puts ""
     puts ""
     display_hand(user_hand)
     puts edge    
+  end
+
+  def get_user_choice
+    puts "Will you hit? Or will you stay?"
+  end
+
+  def display_result_message(message)
+    puts message
+    sleep 4
   end
 end

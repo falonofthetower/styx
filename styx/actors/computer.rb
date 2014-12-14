@@ -4,6 +4,6 @@ class Computer < Player
 
   def initialize
       @wins = 0
-      @hand = []
+      @hand = Hand.new
   end 
 end

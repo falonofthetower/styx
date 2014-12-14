@@ -1,6 +1,6 @@
 class MasterViews
-  def initialize(time=0.5)
-    system("clear")
+  def initialize(time=0.5,clear=true)
+    system("clear") if clear==true
     sleep time
   end
 

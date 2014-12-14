@@ -1,11 +1,23 @@
 module BlackjackUser
-  def wins_hand!
-    @cash += @bet
+  def wins!
+    @cash += @bet * 2
     @bet = 0
   end
 
-  def blackjacks!
-    @cash += @bet * 1.5
+  def end_turn?
+    @end_turn == true
+  end
+
+  def end_turn!
+    @end_turn = true
+  end
+
+  def start_turn!
+    @end_turn = false
+  end
+
+  def blackjack!
+    @cash += @bet * 2.5
     @bet = 0
   end
 
@@ -18,6 +30,11 @@ module BlackjackUser
   end
 
   def push!
+    @cash += @bet
+    @bet = 0
+  end
+
+  def loses!
     @bet = 0
   end  
 end
