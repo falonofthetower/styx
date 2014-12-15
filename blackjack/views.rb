@@ -65,8 +65,36 @@ class Blackjack::Views < MasterViews
     puts "Will you hit? Or will you stay?"
   end
 
-  def display_result_message(message)
-    puts message
-    sleep 4
+  def display_result_message(result,user,dealer)
+    case result
+    when :push
+      puts "#{user.hand.total_score} weighs even with #{dealer.hand.total_score}: push"
+      puts "A scowl and the impatient tapping of the finger accompany your retrivel of your chips"
+    when :user_busts
+      puts "#{user.hand.total_score} exceeds the limits: bust"
+      puts "The man smiles broadly as he rakes your chips in"
+    when :dealer_busts
+      puts "#{dealer.hand.total_score} exceeds the limit"
+      puts "He withdraws into his hooded cloak"
+    when :double_blackjack
+      puts "Lady luck has a sense of humor to bless us both"
+      puts "He purses his lips as you take back your bet"
+    when :user_blackjacks
+      puts "You seem to have blackjacked."
+      puts "The man snarls, a low grumble"
+    when :user_greater_score
+      puts "#{user.hand.total_score} exceeds #{dealer.hand.total_score}"
+      puts "He counts out your pebbles with deliberate precision"
+    when :dealer_blackjacks
+      puts "The dark knave favors me today."
+      puts "You feel as if his collecting hand is shaving away a piece of your soul"
+    when :user_lesser_score
+      puts "My #{dealer.hand.total_score} is greater than your #{user.hand.total_score}"
+      puts "Your doom is nigh."
+    end
+  end
+
+  def display_status(user)    
+    puts "You have #{user.wins} stones, and #{user.cash} pebbles"
   end
 end

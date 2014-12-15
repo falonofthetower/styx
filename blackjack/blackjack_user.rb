@@ -2,7 +2,12 @@ module BlackjackUser
   def wins!
     @cash += @bet * 2
     @bet = 0
+    @wins += 1
   end
+
+  def make_bet
+    @cash -= @bet
+  end  
 
   def end_turn?
     @end_turn == true
@@ -19,6 +24,7 @@ module BlackjackUser
   def blackjack!
     @cash += @bet * 2.5
     @bet = 0
+    @wins += 1
   end
 
   def goes_broke!
