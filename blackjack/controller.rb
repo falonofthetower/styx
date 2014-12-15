@@ -5,7 +5,7 @@
     @user = user
     @dealer = Computer.new
     @deck = Deck.new
-    @views = Blackjack::Views.new    
+      @views = Blackjack::Views.new    
   end
 
   def get_user_bet    
@@ -37,21 +37,23 @@
     end        
   end
 
-  def dealer_round    
-    begin            
-      views.display_table(user.hand.cards,dealer.hand.cards,false)
-      views.display_status(user)
-      sleep 2
-      unless dealer.hand.dealer_done?
-        deck.deal_card dealer.hand.cards
+  def dealer_round
+    unless user.hand.bust?    
+      begin            
         views.display_table(user.hand.cards,dealer.hand.cards,false)
         views.display_status(user)
         sleep 2
-      end
-    end until dealer.hand.dealer_done?    
-    views.display_table(user.hand.cards,dealer.hand.cards,false)
-    views.display_status(user)
-    sleep 2
+        unless dealer.hand.dealer_done?
+          deck.deal_card dealer.hand.cards
+          views.display_table(user.hand.cards,dealer.hand.cards,false)
+          views.display_status(user)
+          sleep 2
+        end
+      end until dealer.hand.dealer_done?    
+      views.display_table(user.hand.cards,dealer.hand.cards,false)
+      views.display_status(user)
+      sleep 2
+    end
   end
 
   def deal_round        
