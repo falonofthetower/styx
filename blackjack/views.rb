@@ -8,8 +8,24 @@ class Blackjack::Views < MasterViews
     sleep 3
     puts "'The man with the cards is coming...'"
     sleep 3
-    puts "'The man with the cards is coming...'"
+    puts "'The man with the cards is coming!!!'"
     sleep 4
+  end
+
+  def blackjack_intro
+    puts "You awake to find a man standing over you"
+    sleep 3
+    puts "He is dressed in long flowing black robes"
+    sleep 3
+    puts "In each hand he holds two decks of cards"
+    sleep 3
+    puts "His eyes swim with death"
+    sleep 3
+    puts "He tosses you a bag filled with pebbles"
+    sleep 3
+    puts "He empties ten stones next to himself"
+    puts "He hands you one for each of your past victories"
+    sleep 3
   end
 
   def ask_for_bet
@@ -96,5 +112,24 @@ class Blackjack::Views < MasterViews
 
   def display_status(user)    
     puts "You have #{user.wins} stones, and #{user.cash} pebbles"
+  end
+
+  def blackjack_conclusion(user)
+    system("clear")
+    puts "The man with the cards crumbles into dust"
+    sleep 3
+    puts "A light wind blows him away to the East"
+    sleep 3
+    puts "In front of you a wide graveyard lies"
+    sleep 3
+    puts "You walk among the tombstones and come upon one"
+    sleep 3
+    puts "#{user.name}, he conquered all,"
+    sleep 3
+    puts "yet here among all the others still he lies"    
+    sleep 5
+    system("clear")
+    puts "THE END"
+    sleep 5
   end
 end

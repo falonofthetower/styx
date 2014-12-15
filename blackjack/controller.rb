@@ -5,7 +5,7 @@
     @user = user
     @dealer = Computer.new
     @deck = Deck.new
-    @views = Blackjack::Views.new
+    @views = Blackjack::Views.new    
   end
 
   def get_user_bet    
@@ -125,22 +125,28 @@
     end
   end
 
-
   def reset_player
     user.end_turn = false
     user.bet = 0
   end
+
+  def conclusion(user)
+    views.blackjack_conclusion(user)
+  end
   
-  def play    
+  def play
+    views.the_man_with_the_cards
+    system("clear")
+    views.blackjack_intro
     begin      
-      get_user_bet
-      views = 
+      get_user_bet      
       deal_round
       user_round
       dealer_round
       determine_winner
       cleanup_table      
       reset_player
-    end until user.wins >= 20
+    end until user.wins >= 3
+    conclusion(user)
   end 
 end
