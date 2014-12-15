@@ -9,11 +9,10 @@
   end
 
   def get_user_bet    
-    user.bet = 0
-    view = Blackjack::Views.new
-    view.display_table(user.hand.cards,dealer.hand.cards)    
-    view.display_status(user)
-    view.ask_for_bet
+    user.bet = 0    
+    views.display_table(user.hand.cards,dealer.hand.cards)    
+    views.display_status(user)
+    views.ask_for_bet
     begin
       answer = gets.chomp.to_i
       user.bet = answer if answer > 0
@@ -21,13 +20,12 @@
     user.make_bet
   end
 
-  def get_user_choice    
-    view = Blackjack::Views.new(0)
-    view.display_table(user.hand.cards,dealer.hand.cards)    
-    view.display_status(user)
-    Blackjack::Views.new(0,clear=false).invalid_choice(@msg) if @msg
+  def get_user_choice        
+    views.display_table(user.hand.cards,dealer.hand.cards)    
+    views.display_status(user)
+    views.invalid_choice(@msg) if @msg
     @msg = false    
-    Blackjack::Views.new(0,clear=false).get_user_choice    
+    views.get_user_choice    
     choice = gets.chomp
     case choice
     when "h"
@@ -40,39 +38,37 @@
   end
 
   def dealer_round    
-    begin      
-      view = Blackjack::Views.new(0)
-      view.display_table(user.hand.cards,dealer.hand.cards,false)
-      view.display_status(user)
+    begin            
+      views.display_table(user.hand.cards,dealer.hand.cards,false)
+      views.display_status(user)
       sleep 2
       unless dealer.hand.dealer_done?
         deck.deal_card dealer.hand.cards
-        Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards,false)
-        view.display_status(user)
+        views.display_table(user.hand.cards,dealer.hand.cards,false)
+        views.display_status(user)
         sleep 2
       end
-    end until dealer.hand.dealer_done?
-    view = Blackjack::Views.new
-    view.display_table(user.hand.cards,dealer.hand.cards,false)
-    view.display_status(user)
+    end until dealer.hand.dealer_done?    
+    views.display_table(user.hand.cards,dealer.hand.cards,false)
+    views.display_status(user)
     sleep 2
   end
 
-  def deal_round    
-    Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards)
-    #sleep 0.7
+  def deal_round        
+    views.display_table(user.hand.cards,dealer.hand.cards)
+    sleep 0.7
     deck.deal_card user.hand.cards
-    Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards)
-    #sleep 0.7
+    views.display_table(user.hand.cards,dealer.hand.cards)
+    sleep 0.7
     deck.deal_card dealer.hand.cards
-    Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards)
-    #sleep 0.7
+    views.display_table(user.hand.cards,dealer.hand.cards)
+    sleep 0.7
     deck.deal_card user.hand.cards
-    Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards)
-   # sleep 0.7
+    views.display_table(user.hand.cards,dealer.hand.cards)
+    sleep 0.7
     deck.deal_card dealer.hand.cards
-    Blackjack::Views.new(0).display_table(user.hand.cards,dealer.hand.cards)
-    #sleep 0.7
+    views.display_table(user.hand.cards,dealer.hand.cards)
+    sleep 0.7
   end
 
   def user_round
@@ -138,6 +134,7 @@
   def play    
     begin      
       get_user_bet
+      views = 
       deal_round
       user_round
       dealer_round
