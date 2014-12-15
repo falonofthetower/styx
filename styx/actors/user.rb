@@ -14,7 +14,7 @@ class User < Player
     @wins = 0
     @hand = Hand.new 
     @end_turn = false
-    @cash = 100   
+    @cash = 100.00  
   end
 
   def valid_name?

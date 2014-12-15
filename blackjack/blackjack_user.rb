@@ -30,7 +30,7 @@ module BlackjackUser
   end
 
   def is_broke?
-    @cash < 0
+    @cash <= 0
   end
 
   def push!

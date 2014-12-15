@@ -4,13 +4,11 @@ Object Oriented Styx
 This is the project for week 2 of Tealeaf Academy's Introduction to Ruby and Web Development.
 The project is currently in the second phase (Tic Tac Toe). I redid the first portion mainly because moving onto the second round of development I didn't like how it extended. If you simply want to play it run index.rb.
 
-If you are intending on playtesting it you can crack open index.rb and adjust the 
-``end until user.wins >=`` lines to however many you want. Currently you play to 10 wins (your wins) each round.
-
 It is implementing more or less an MVC pattern mostly because I felt comfortable in it. I wanted to test myself by building it before reading/watching the content and feel pleased with my ability to tinker with the code in this setup.
+
+If you are here only to test the blackjack you can comment out the modules you don't want in the index.rb. Make note that it won't run without the intro as that gathers your name. I removed the betting feature because it doesn't fit with the game. This is intended as a flow which you have to play through until you defeat the man with the cards. Currently it requires 20 victories without running out of cash.
 
 Any comments, suggestions, or criticism is welcome.
 
-Current development is Namespacing/autoloading
 
 The man with the cards is coming...

@@ -6,7 +6,7 @@
     @dealer = Computer.new
     @deck = Deck.new
     @views = Blackjack::Views.new 
-    user.bet = 10   
+    user.bet = 10.0   
   end
 
   def get_user_choice        
@@ -45,7 +45,10 @@
     end
   end
 
-  def deal_round        
+  def deal_round    
+    user.dies_horrible_death if user.is_broke?
+    user.bet = 10.0
+    user.make_bet        
     views.display_table(user.hand.cards,dealer.hand.cards)
     sleep 0.7
     deck.deal_card user.hand.cards
