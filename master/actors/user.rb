@@ -18,7 +18,7 @@ class User < Player
   end
 
   def valid_name?
-    true unless self.name == ''
+    self.name != ''
   end    
 
   def dies_horrible_death
