@@ -1,7 +1,6 @@
 module BlackjackUser
   def wins!
-    @cash += @bet * 2
-    @bet = 0
+    @cash += @bet * 2    
     @wins += 1
   end
 
@@ -22,8 +21,7 @@ module BlackjackUser
   end
 
   def blackjack!
-    @cash += @bet * 2.5
-    @bet = 0
+    @cash += @bet * 2.5    
     @wins += 1
   end
 
@@ -37,10 +35,8 @@ module BlackjackUser
 
   def push!
     @cash += @bet
-    @bet = 0
   end
 
-  def loses!
-    @bet = 0
+  def loses!    
   end  
 end

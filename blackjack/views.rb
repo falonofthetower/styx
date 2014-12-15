@@ -2,6 +2,7 @@ class Blackjack::Views < MasterViews
   def the_man_with_the_cards
     sleep 4
     puts "You are asleep, dreaming of something both beautiful and profound."
+    sleep 3
     puts "Suddenly you hear the voices. The voices pounding in your head."
     sleep 3
     puts "'The man with the cards is coming...'"
@@ -23,14 +24,11 @@ class Blackjack::Views < MasterViews
     sleep 3
     puts "He tosses you a bag filled with pebbles"
     sleep 3
-    puts "He empties ten stones next to himself"
+    puts "He empties twenty stones next to himself"
+    sleep 3
     puts "He hands you one for each of your past victories"
     sleep 3
-  end
-
-  def ask_for_bet
-    puts "How much will you wager?"
-  end
+  end  
 
   def display_hand(hand,blind_card=false)  
     top_line =                   ""

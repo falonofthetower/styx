@@ -5,19 +5,8 @@
     @user = user
     @dealer = Computer.new
     @deck = Deck.new
-      @views = Blackjack::Views.new    
-  end
-
-  def get_user_bet    
-    user.bet = 0    
-    views.display_table(user.hand.cards,dealer.hand.cards)    
-    views.display_status(user)
-    views.ask_for_bet
-    begin
-      answer = gets.chomp.to_i
-      user.bet = answer if answer > 0
-    end until user.bet != 0
-    user.make_bet
+    @views = Blackjack::Views.new 
+    user.bet = 10   
   end
 
   def get_user_choice        
@@ -140,15 +129,14 @@
     views.the_man_with_the_cards
     system("clear")
     views.blackjack_intro
-    begin      
-      get_user_bet      
+    begin            
       deal_round
       user_round
       dealer_round
       determine_winner
       cleanup_table      
       reset_player
-    end until user.wins >= 10
+    end until user.wins >= 20
     conclusion(user)
   end 
 end

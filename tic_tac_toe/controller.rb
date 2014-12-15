@@ -32,7 +32,7 @@
       tictactoe.process_winner
       tictactoe.declare_winner  
       starting_player = starting_player * -1
-    end until user.wins >= 1
+    end until user.wins >= 10
     tictactoe.conclusion
   end
 
@@ -61,7 +61,7 @@
   end
 
   def process_winner    
-    self.winner == 'user' ? user.add_win : computer.add_win 
+    self.winner == 'user' ? user.add_win : user.cash -= 5
   end
 
   def declare_winner    
