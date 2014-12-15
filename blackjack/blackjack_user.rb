@@ -38,5 +38,5 @@ module BlackjackUser
   end
 
   def loses!    
-  end  
+  end 
 end

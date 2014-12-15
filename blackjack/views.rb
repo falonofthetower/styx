@@ -129,5 +129,13 @@ class Blackjack::Views < MasterViews
     system("clear")
     puts "THE END"
     sleep 5
+    system("clear")
+    puts "The Graveyard"
+    File.open('graveyard.txt', 'r') do |file|
+      while line = file.gets
+        puts line
+        sleep 3
+      end
+    end
   end
 end

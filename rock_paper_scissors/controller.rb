@@ -49,7 +49,8 @@ class RockPaperScissors::Controller
       unless yes_or_no? input
         puts "#{user.name} you must answer yes or no!"        
       end
-    end until yes_or_no? input  
+    end until yes_or_no? input
+    abort if input == "n"  
   end
 
   def yes_or_no?(input)

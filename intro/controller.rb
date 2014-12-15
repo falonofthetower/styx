@@ -32,8 +32,8 @@ class Intro::Controller
       unless yes_or_no? input
         puts "#{user.name} you must answer yes or no!"        
       end
-    end until yes_or_no? input
-    abort if input == 'n'
+    end until yes_or_no? input    
+    user.dies_horrible_death if input == 'n'
   end
 
   def yes_or_no?(input)

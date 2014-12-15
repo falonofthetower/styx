@@ -114,6 +114,7 @@
     until dealer.hand.cards.empty?
       deck.discard << dealer.hand.cards.pop
     end
+    user.dies_horrible_death if user.is_broke?
   end
 
   def reset_player
