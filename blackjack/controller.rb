@@ -146,7 +146,7 @@
       determine_winner
       cleanup_table      
       reset_player
-    end until user.wins >= 3
+    end until user.wins >= 10
     conclusion(user)
   end 
 end
