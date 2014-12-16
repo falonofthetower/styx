@@ -1,4 +1,4 @@
-require_relative 'styx/config'
+require_relative 'master/config'
 class Styx
   attr_accessor :user  
 
