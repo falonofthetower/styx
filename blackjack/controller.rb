@@ -92,7 +92,7 @@
       display_winner :double_blackjack
       user.push!
     elsif dealer.hand.blackjack?
-      displayer_winner :dealer_blackjacks
+      display_winner :dealer_blackjacks
       user.loses!
     elsif user.hand.total_score == dealer.hand.total_score
       display_winner :push
