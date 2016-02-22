@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'master_views'
 require_relative '../rock_paper_scissors/rock_paper_scissors'
 require_relative '../tic_tac_toe/tic_tac_toe'
